@@ -2,15 +2,15 @@
 #include "ColorUtils.h"
 #include <iostream>
 
-namespace TelCoColorCoder
-{
-    void PrintReferenceManual() {
-        int totalPairs = numberOfMajorColors * numberOfMinorColors;
-        std::cout << "------ 25 Pair Color Code Reference Manual ------\n";
-        for (int i = 1; i <= totalPairs; i++) {
-            ColorPair cp = GetColorFromPairNumber(i);
-            std::cout << "Pair " << i << ": " << cp.ToString() << std::endl;
-        }
-        std::cout << "------------------------------------------------\n";
+namespace TelCoColorCoder {
+
+void print_reference_manual() {
+    std::cout << "------ 25-Pair Color Code Reference Manual ------\n";
+    for (int i = 1; i <= numberOfMajorColors * numberOfMinorColors; ++i) {
+        ColorPair cp = get_color_from_pair_number(i);
+        std::cout << "Pair " << i << ": " << cp.to_string() << "\n";
     }
+    std::cout << "------------------------------------------------\n";
 }
+
+} // namespace TelCoColorCoder
