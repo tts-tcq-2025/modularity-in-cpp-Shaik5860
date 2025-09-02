@@ -3,10 +3,11 @@
 
 #include "ColorPair.h"
 
-namespace TelCoColorCoder
-{
-    ColorPair GetColorFromPairNumber(int pairNumber);
-    int GetPairNumberFromColor(MajorColor major, MinorColor minor);
-}
+namespace TelCoColorCoder {
 
-#endif
+ColorPair get_color_from_pair_number(int pair_number);
+int get_pair_number_from_color(MajorColor major, MinorColor minor);
+
+} // namespace TelCoColorCoder
+
+#endif // COLORUTILS_H
