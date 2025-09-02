@@ -1,21 +1,10 @@
-#include <iostream>
-#include <assert.h>
+#include "Tests.cpp"
 #include "ReferenceManual.h"
-
-// Forward declaration of test runner from Tests.cpp
-namespace TelCoColorCoder {
-    void RunAllTests();
-}
 
 using namespace TelCoColorCoder;
 
 int main() {
-    // Run all unit tests
-    RunAllTests();
-
-    // Print reference manual for wiring personnel
-    PrintReferenceManual();
-
+    RunAllTests();             // Run all unit tests
+    print_reference_manual();   // Print the wiring reference manual
     return 0;
 }
-
