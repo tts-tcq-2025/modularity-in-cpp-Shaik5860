@@ -1,20 +1,23 @@
 #include "ColorPair.h"
 
-namespace TelCoColorCoder
-{
-    const char* MajorColorNames[] = { "White", "Red", "Black", "Yellow", "Violet" };
-    int numberOfMajorColors = sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
+namespace TelCoColorCoder {
 
-    const char* MinorColorNames[] = { "Blue", "Orange", "Green", "Brown", "Slate" };
-    int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
+const char* MajorColorNames[] = { "White", "Red", "Black", "Yellow", "Violet" };
+const char* MinorColorNames[] = { "Blue", "Orange", "Green", "Brown", "Slate" };
 
-    ColorPair::ColorPair(MajorColor major, MinorColor minor)
-        : majorColor(major), minorColor(minor) {}
+const int numberOfMajorColors = sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
+const int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 
-    MajorColor ColorPair::getMajor() const { return majorColor; }
-    MinorColor ColorPair::getMinor() const { return minorColor; }
+ColorPair::ColorPair(MajorColor major, MinorColor minor)
+    : major_(major), minor_(minor) {}
 
-    std::string ColorPair::ToString() const {
-        return std::string(MajorColorNames[majorColor]) + " " + MinorColorNames[minorColor];
-    }
+MajorColor ColorPair::get_major() const { return major_; }
+
+MinorColor ColorPair::get_minor() const { return minor_; }
+
+std::string ColorPair::to_string() const {
+    return std::string(MajorColorNames[major_]) + " " +
+           MinorColorNames[minor_];
 }
+
+} // namespace TelCoColorCoder
